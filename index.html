@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClinicaApp — Portal Académico e Interdisciplinar (Tecnológico Comfenalco)</title>
+  <meta name="description" content="Portal académico y metodológico de ClinicaApp: Ecosistema integral veterinario con Spring Boot 3.5, LLM Nova Brain, Modelado Dimensional Kimball en Power BI y Optimización Geoespacial PLEB/Haversine. Fundación Universitaria Tecnológico Comfenalco.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Sticky Academic Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="#inicio" class="brand-logo">
+        <div class="logo-badge">CA</div>
+        <div class="logo-text">
+          <span class="logo-title">CLINICAAPP</span>
+          <span class="logo-subtitle">Tecnológico Comfenalco • VII Semestre</span>
+        </div>
+      </a>
+
+      <!-- Desktop & Mobile Navigation Menu -->
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+          <li><a href="#proyecto" class="nav-link">Proyecto</a></li>
+          <li><a href="#problema" class="nav-link">Problema</a></li>
+          <li><a href="#asignaturas" class="nav-link">Asignaturas</a></li>
+          <li><a href="#arquitectura" class="nav-link">Arquitectura</a></li>
+          <li><a href="#evidencias" class="nav-link">Evidencias</a></li>
+          <li><a href="#documentacion" class="nav-link">Informes & Word</a></li>
+          <li><a href="#trazabilidad" class="nav-link">Trazabilidad</a></li>
+          <li><a href="#cronograma" class="nav-link">Cronograma</a></li>
+          <li><a href="#equipo" class="nav-link">Equipo & Docentes</a></li>
+        </ul>
+      </nav>
+
+      <!-- Actions -->
+      <div class="header-actions">
+        <button class="btn-icon-search" id="btnOpenSearch" title="Buscar en el portal (Ctrl+K)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Buscar</span>
+          <span class="kbd-shortcut">Ctrl K</span>
+        </button>
+
+        <button class="btn-presentation" id="btnPresentationMode" title="Activar modo de presentación para sustentar">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          <span>Modo Presentación</span>
+        </button>
+
+        <button class="btn-mobile-toggle" id="mobileMenuToggle" aria-label="Abrir menú">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="inicio">
+    <div class="container">
+      <div class="hero-academic-header">
+        <div class="academic-entity">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+          <span>Fundación Universitaria Tecnológico Comfenalco • Facultad de Ingeniería • Ingeniería de Sistemas</span>
+        </div>
+        <div class="academic-badge-semestre">VII Semestre • Octubre 2026</div>
+      </div>
+
+      <div class="hero-main">
+        <div class="hero-content">
+          <h1 class="hero-headline">
+            Plataforma Integral e Inteligente para la <span class="highlight">Gestión Veterinaria</span>
+          </h1>
+          <p class="hero-description">
+            Ecosistema de ingeniería de software que articula sinérgicamente el <strong>Desarrollo Web Avanzado</strong> (Spring Boot 3.5 + LLM Nova Brain), la <strong>Visualización de Datos II</strong> (Esquema Estrella Kimball y Power BI) y la <strong>Investigación de Operaciones</strong> (Optimización PLEB y Distancia Haversine) para centros asistenciales en Cartagena.
+          </p>
+          <div class="hero-ctas">
+            <a href="#asignaturas" class="btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              Explorar Asignaturas
+            </a>
+            <a href="#documentacion" class="btn-secondary" style="border-color: var(--brand-primary); color: var(--brand-primary); background-color: var(--brand-primary-light);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+              Ver Informe PDF & Word
+            </a>
+            <a href="https://github.com/cardenaswalker2/ClinicaApp.git" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              GitHub Oficial
+            </a>
+          </div>
+        </div>
+
+        <!-- Formula Interdisciplinar Card -->
+        <div class="hero-equation-card">
+          <div class="equation-header">
+            <span>Sinergia Metodológica</span>
+            <span>Docentes Evaluadores</span>
+          </div>
+          <div class="equation-pillars">
+            <div class="equation-item dwa" onclick="switchSubjectTab('dwa', true);" style="cursor: pointer;" title="Ir al panel de Desarrollo Web Avanzado">
+              <div class="equation-icon">DWA</div>
+              <div class="equation-text">
+                <h4>Desarrollo Web Avanzado</h4>
+                <p><strong>Ing. Fabio García Ramírez</strong> • Spring Boot 3.5, LLM & Seguridad</p>
+              </div>
+            </div>
+            <div class="equation-item vd" onclick="switchSubjectTab('vd', true);" style="cursor: pointer;" title="Ir al panel de Visualización de Datos II">
+              <div class="equation-icon">VD II</div>
+              <div class="equation-text">
+                <h4>Visualización de Datos II</h4>
+                <p><strong>Ing. Walter Alberto Espriella Castellar</strong> • Modelo Kimball & Power BI</p>
+              </div>
+            </div>
+            <div class="equation-item io" onclick="switchSubjectTab('io', true);" style="cursor: pointer;" title="Ir al panel de Investigación de Operaciones">
+              <div class="equation-icon">IO</div>
+              <div class="equation-text">
+                <h4>Investigación de Operaciones</h4>
+                <p><strong>Ing. Lucía Margarita Mestre Tapia</strong> • PLEB & Haversine</p>
+              </div>
+            </div>
+          </div>
+          <div class="equation-result">
+            <div>
+              <h4>CLINICAAPP</h4>
+              <p>Proyecto de Aula Integrador (VII Semestre)</p>
+            </div>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Strip -->
+      <div class="metrics-strip">
+        <div class="metric-card">
+          <div class="metric-val">3</div>
+          <div class="metric-label">Asignaturas Interdisciplinares</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">3.469</div>
+          <div class="metric-label">Hechos Simulados (Data Warehouse)</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">128 D</div>
+          <div class="metric-label">Descriptores Biometría Facial</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">90%</div>
+          <div class="metric-label">Avance Promedio VII Semestre</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Sobre el Proyecto -->
+  <section class="section" id="proyecto">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-tag">Fundamentación Académica</div>
+        <h2 class="section-heading">Evolución y Alcance de ClinicaApp</h2>
+        <p class="section-lead">
+          Una respuesta tecnológica integral a las limitaciones estructurales en la gestión veterinaria urbana de Cartagena de Indias.
+        </p>
+      </div>
+
+      <div class="details-2col" style="margin-bottom: 32px;">
+        <div class="content-block-card">
+          <h4>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            Contexto y Justificación Interdisciplinar
+          </h4>
+          <ul>
+            <li><strong>Relevancia Social:</strong> Los animales de compañía representan miembros plenos de los núcleos familiares urbanos contemporáneos.</li>
+            <li><strong>Problemática Real:</strong> Uso preponderante de carnets físicos de vacunación, fichas en papel y bases de datos aisladas en cada centro asistencial.</li>
+            <li><strong>Riesgo Sanitario:</strong> Pérdida de historiales preventivos vitales ante emergencias o traslados en el Distrito de Cartagena.</li>
+            <li><strong>Marco Normativo:</strong> Cumplimiento estricto del Art. 15 CP, Ley 1581 de 2012 (Habeas Data), Ley 1774 de 2016 (Bienestar Animal) y Lineamientos CONPES 3975 de IA ética.</li>
+          </ul>
+        </div>
+
+        <div class="content-block-card">
+          <h4>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            Objetivo General de Investigación
+          </h4>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 16px;">
+            Desarrollar y evaluar una plataforma web integral e inteligente (<strong>«ClinicaApp»</strong>) para la gestión unificada de centros veterinarios en Cartagena, que integre un agente conversacional basado en Modelos de Lenguaje Masivos (LLM) con arquitectura segura en Spring Boot, un modelo analítico dimensional con identificación de fuentes de datos, y un modelo de optimización matemática para la asignación geoespacial de recursos clínicos.
+          </p>
+          <div style="padding: 12px 16px; background-color: var(--bg-elevated); border-radius: var(--radius-sm); border: 1px solid var(--border-light); font-size: 0.85rem; color: var(--text-muted);">
+            <strong>Enfoque Metodológico:</strong> Paradigma empírico-analítico mixto (cualitativo en diseño de requerimientos y cuantitativo en tiempos de inferencia, consultas dimensionales y optimización algorítmica).
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: El Problema (Árbol Interactivo) -->
+  <section class="section" id="problema" style="background-color: var(--bg-elevated);">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-tag">Estructura Causal</div>
+        <h2 class="section-heading">El Árbol del Problema Interactivo</h2>
+        <p class="section-lead">
+          Interrelación causa-efecto que sustenta la necesidad de una solución de software interdisciplinar en Cartagena.
+        </p>
+      </div>
+
+      <div class="problem-interactive-tree">
+        <!-- Causas Directas -->
+        <div class="tree-column causas">
+          <div class="tree-column-header">
+            <span>Causas Directas</span>
+            <span>(Raíz)</span>
+          </div>
+          <div class="tree-node-list" id="treeCausasList">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Problema Central -->
+        <div class="tree-column central">
+          <div class="tree-column-header">
+            <span>Problema Central</span>
+            <span>(Foco)</span>
+          </div>
+          <div style="padding: 20px; background-color: #ffffff; border-radius: var(--radius-md); border: 2px solid #ef4444; text-align: center; margin-bottom: 16px;">
+            <p style="font-size: 0.95rem; font-weight: 700; color: #991b1b; line-height: 1.5;">
+              Fragmentación de la información sanitaria animal, deficiente asignación de recursos geográficos y carencia de canales inteligentes para la gestión, el triaje y la toma de decisiones clínicas y directivas en el sector veterinario.
+            </p>
+          </div>
+          <div id="problemTreeFocusDetail">
+            <div style="padding: 14px; background: #ffffff; border: 1px dashed var(--border-medium); border-radius: var(--radius-sm); text-align: center; font-size: 0.82rem; color: var(--text-muted);">
+              Haz clic en cualquier causa o efecto para ver su impacto detallado.
+            </div>
+          </div>
+        </div>
+
+        <!-- Efectos Negativos -->
+        <div class="tree-column efectos">
+          <div class="tree-column-header">
+            <span>Efectos / Consecuencias</span>
+            <span>(Impacto)</span>
+          </div>
+          <div class="tree-node-list" id="treeEfectosList">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Las Tres Asignaturas Interdisciplinares -->
+  <section class="section" id="asignaturas">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-tag">Entregables Académicos</div>
+        <h2 class="section-heading">Entregables por Asignatura y Docente</h2>
+        <p class="section-lead">
+          Espacio dedicado para que cada docente evaluador revise específicamente los entregables, modelos, diagramas y código correspondientes a su materia.
+        </p>
+      </div>
+
+      <!-- Overview Cards -->
+      <div class="subjects-overview-grid">
+        <!-- DWA Card -->
+        <div class="subject-summary-card dwa">
+          <div>
+            <span class="subject-card-badge">Desarrollo Web Avanzado</span>
+            <div style="font-size: 0.82rem; font-weight: 700; color: var(--brand-primary); margin-bottom: 6px;">Docente: Ing. Fabio García Ramírez</div>
+            <h3 class="subject-card-title">Spring Boot 3.5, Nova Brain & Seguridad</h3>
+            <p class="subject-card-text">
+              Arquitectura en 5 capas, agente inteligente con LLM Llama 3.3 70B vía Groq Cloud, RAG contextual en memoria, motor de contingencia heurístico y login biométrico facial 128D.
+            </p>
+            <div class="subject-card-tags">
+              <span class="tag-pill">Java 21 LTS</span>
+              <span class="tag-pill">Spring Security</span>
+              <span class="tag-pill">OAuth2 / OIDC</span>
+              <span class="tag-pill">Groq LLM</span>
+              <span class="tag-pill">Web Speech API</span>
+            </div>
+          </div>
+          <div class="subject-card-footer">
+            <span class="subject-progress-val">Avance: 95%</span>
+            <button class="btn-explore-subject" onclick="switchSubjectTab('dwa', true)">
+              Ver Entregables DWA →
+            </button>
+          </div>
+        </div>
+
+        <!-- VD II Card -->
+        <div class="subject-summary-card vd">
+          <div>
+            <span class="subject-card-badge">Visualización de Datos II</span>
+            <div style="font-size: 0.82rem; font-weight: 700; color: var(--brand-secondary); margin-bottom: 6px;">Docente: Ing. Walter Alberto Espriella Castellar</div>
+            <h3 class="subject-card-title">Fuentes, Modelo Kimball & Power BI</h3>
+            <p class="subject-card-text">
+              Identificación formal de fuentes operacionales (MongoDB OLTP) y construcción de repositorio de prueba en CSV (3.469 hechos simulados) bajo Esquema Estrella puro con métricas DAX.
+            </p>
+            <div class="subject-card-tags">
+              <span class="tag-pill">Ralph Kimball</span>
+              <span class="tag-pill">Esquema Estrella</span>
+              <span class="tag-pill">Fact_Atenciones</span>
+              <span class="tag-pill">Métricas DAX</span>
+              <span class="tag-pill">Power BI Prototipo</span>
+            </div>
+          </div>
+          <div class="subject-card-footer">
+            <span class="subject-progress-val">Avance: 90%</span>
+            <button class="btn-explore-subject" onclick="switchSubjectTab('vd', true)">
+              Ver Entregables VD II →
+            </button>
+          </div>
+        </div>
+
+        <!-- IO Card -->
+        <div class="subject-summary-card io">
+          <div>
+            <span class="subject-card-badge">Investigación de Operaciones</span>
+            <div style="font-size: 0.82rem; font-weight: 700; color: var(--accent-amber); margin-bottom: 6px;">Docente: Ing. Lucía Margarita Mestre Tapia</div>
+            <h3 class="subject-card-title">Modelo PLEB & Distancia Haversine</h3>
+            <p class="subject-card-text">
+              Optimización matemática de programación lineal entera binaria para seleccionar algorítmicamente la sede veterinaria óptima de menor distancia geodésica sujeta a restricciones de operatividad y radio.
+            </p>
+            <div class="subject-card-tags">
+              <span class="tag-pill">PLEB X_i ∈ {0,1}</span>
+              <span class="tag-pill">Min Z = ∑(d_i · X_i)</span>
+              <span class="tag-pill">Haversine (R=6371km)</span>
+              <span class="tag-pill">Java OptimizacionServiceImpl</span>
+            </div>
+          </div>
+          <div class="subject-card-footer">
+            <span class="subject-progress-val">Avance: 90%</span>
+            <button class="btn-explore-subject" onclick="switchSubjectTab('io', true)">
+              Ver Entregables IO →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deep Subject Detail Panel / Tabs -->
+      <div class="subject-detail-container" id="subjectDetailContainer">
+        <div class="subject-tabs-nav">
+          <button class="tab-btn active" data-tab="dwa">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            Desarrollo Web Avanzado (Ing. Fabio García Ramírez)
+          </button>
+          <button class="tab-btn" data-tab="vd">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+            Visualización de Datos II (Ing. Walter Alberto Espriella)
+          </button>
+          <button class="tab-btn" data-tab="io">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+            Investigación de Operaciones (Ing. Lucía Margarita Mestre)
+          </button>
+        </div>
+
+        <!-- TAB 1: DESARROLLO WEB AVANZADO -->
+        <div class="tab-content-panel active" id="tab-dwa">
+          <div style="margin-bottom: 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 6px;">
+              <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--text-primary);">
+                Desarrollo Web Avanzado: Arquitectura Spring Boot, LLM Nova Brain y Seguridad
+              </h3>
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <span class="tag-pill" style="font-weight: 700; color: var(--brand-primary); background: var(--brand-primary-light);">Docente: Ing. Fabio García Ramírez</span>
+                <a href="Entregable_DWA_Fabio_Garcia_ClinicaApp.docx" download class="tag-pill" style="font-weight: 700; color: #ffffff; background: var(--brand-primary); text-decoration: none;">📥 Descargar Word DWA (.docx)</a>
+              </div>
+            </div>
+            <p style="font-size: 0.95rem; color: var(--text-secondary);">
+              Implementación en Java 21 LTS y Spring Boot 3.5 con persistencia documental NoSQL y servicios de inteligencia artificial generativa.
+            </p>
+          </div>
+
+          <div class="details-2col" style="margin-bottom: 32px;">
+            <div class="content-block-card">
+              <h4>1. Arquitectura de Integración con LLM (Nova Brain)</h4>
+              <ul>
+                <li><strong>Controlador RESTful:</strong> <code>NovaAIController.java</code> mapeado al endpoint <code>/api/nova-brain/think</code>.</li>
+                <li><strong>RAG Contextual Ligero:</strong> Al recibir una consulta, extrae la identidad del usuario desde Spring Security, consulta en MongoDB sus mascotas e historial de citas pendientes e inyecta dinámicamente este contexto en el prompt del sistema.</li>
+                <li><strong>Proveedor Externo:</strong> Petición HTTP al endpoint de Groq Cloud consumiendo el modelo masivo <code>Llama 3.3 70B Versatile</code> gestionado mediante la variable <code>${GROQ_API_KEY}</code>.</li>
+                <li><strong>Motor de Contingencia Heurístico:</strong> Mecanismo fallback por expresiones regulares (<code>MOTOR_LOGICO</code>) que opera ante fallas de red o ausencia de credenciales externas.</li>
+                <li><strong>Auditoría:</strong> Persistencia en <code>LogInferencia.java</code> registrando tokens consumidos, latencia y modelo.</li>
+              </ul>
+            </div>
+
+            <div class="content-block-card">
+              <h4>2. Seguridad Perimetral, RBAC y Biometría</h4>
+              <ul>
+                <li><strong>SecurityConfig.java:</strong> Configuración de <code>SecurityFilterChain</code> con encriptación BCrypt.</li>
+                <li><strong>Filtros de Red:</strong> <code>NetworkDeviceFilter</code> y <code>MaintenanceFilter</code> para protección perimetral.</li>
+                <li><strong>Autenticación Federada:</strong> OAuth2 / OIDC con Google y GitHub.</li>
+                <li><strong>Control de Acceso RBAC:</strong> 6 roles (<code>ROLE_ADMIN</code>, <code>ROLE_CLINICA</code>, <code>ROLE_VETERINARIO</code>, <code>ROLE_RECEPCIONISTA</code>, <code>ROLE_AUXILIAR</code>, <code>ROLE_CLIENTE</code>).</li>
+                <li><strong>Login Facial Biométrico:</strong> Algoritmo en <code>UsuarioServiceImpl.java</code> con distancia euclidiana sobre vectores de 128 dimensiones (umbral &lt; 0.38).</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Diccionario de Datos MongoDB -->
+          <div style="margin-top: 32px;">
+            <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+              Diccionario de Datos del Modelo E-R Documental (MongoDB Atlas 7.0)
+            </h4>
+            <div class="academic-table-wrap">
+              <table class="academic-table">
+                <thead>
+                  <tr>
+                    <th>Colección</th>
+                    <th>Campos Verificados</th>
+                    <th>Tipo de Dato</th>
+                    <th>Descripción Funcional</th>
+                    <th>Restricción / Relación</th>
+                  </tr>
+                </thead>
+                <tbody id="mongoDictionaryBody">
+                  <!-- Rendered by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: VISUALIZACIÓN DE DATOS II -->
+        <div class="tab-content-panel" id="tab-vd">
+          <div style="margin-bottom: 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 6px;">
+              <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--text-primary);">
+                Visualización de Datos II: Fuentes, Modelo Kimball y Preparación para Power BI
+              </h3>
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <span class="tag-pill" style="font-weight: 700; color: var(--brand-secondary); background: var(--brand-secondary-light);">Docente: Ing. Walter Alberto Espriella Castellar</span>
+                <a href="Entregable_VD_Walter_Espriella_ClinicaApp.docx" download class="tag-pill" style="font-weight: 700; color: #ffffff; background: var(--brand-secondary); text-decoration: none;">📥 Descargar Word VD II (.docx)</a>
+              </div>
+            </div>
+            <p style="font-size: 0.95rem; color: var(--text-secondary);">
+              Estructuración de fuentes de datos, diseño del esquema estrella y repositorio sintético con 3.469 hechos simulados conforme a la Ley 1581 de 2012.
+            </p>
+          </div>
+
+          <div class="details-2col" style="margin-bottom: 32px;">
+            <div class="content-block-card">
+              <h4>1. Caracterización Formal de Fuentes de Datos</h4>
+              <ul>
+                <li><strong>Fuentes Operacionales (OLTP):</strong> Base de datos MongoDB Atlas 7.0 (colecciones usuarios, mascotas, clínicas, citas, servicios, visitas y logs_inferencia). Mecanismo de acceso: MongoRepository y Aggregation Framework.</li>
+                <li><strong>Fuentes Sintéticas de Prueba (CSV):</strong> 6 datasets normalizados ubicados en <code>docs/powerbi_datawarehouse/</code>. Creados para validar analítica sin vulnerar la privacidad de usuarios reales.</li>
+                <li><strong>Mecanismo de Acceso:</strong> Conector de texto/CSV nativo en Power BI Desktop y librerías de análisis en Python (Pandas).</li>
+              </ul>
+            </div>
+
+            <div class="content-block-card">
+              <h4>2. Arquitectura del Esquema Estrella (Star Schema)</h4>
+              <ul>
+                <li><strong>Metodología Ralph Kimball:</strong> Selección de esquema estrella desnormalizado para optimizar consultas de agregación y evitar JOINs lentos.</li>
+                <li><strong>Tabla Central:</strong> <code>Fact_Atenciones_Citas</code> con grano atómico por cita individual atendida (3.469 hechos).</li>
+                <li><strong>5 Tablas Dimensionales:</strong> Dim_Tiempo (730 días), Dim_Clinica (6 sedes), Dim_Servicio (8 servicios), Dim_Mascota (150 animales), Dim_Veterinario (10 especialistas).</li>
+                <li><strong>Relaciones:</strong> Uno a muchos (1:N) estrictas con filtrado unidireccional desde dimensiones hacia hechos.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Métricas DAX -->
+          <div class="content-block-card" style="margin-bottom: 24px;">
+            <h4>3. Fórmulas DAX y Métricas Clave de Rendimiento para Power BI</h4>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 14px;">
+              <div style="padding: 12px; background: var(--bg-elevated); border-radius: 6px;">
+                <strong style="font-size: 0.85rem; color: var(--brand-secondary);">Tasa de Asistencia:</strong>
+                <div style="font-family: var(--font-mono); font-size: 0.82rem; margin-top: 4px;">[Total Citas Asistidas] / [Total Citas Programadas]</div>
+              </div>
+              <div style="padding: 12px; background: var(--bg-elevated); border-radius: 6px;">
+                <strong style="font-size: 0.85rem; color: var(--brand-secondary);">Tasa de Inasistencia (No-Show):</strong>
+                <div style="font-family: var(--font-mono); font-size: 0.82rem; margin-top: 4px;">[Total Citas No Asistidas] / [Total Citas Programadas]</div>
+              </div>
+              <div style="padding: 12px; background: var(--bg-elevated); border-radius: 6px;">
+                <strong style="font-size: 0.85rem; color: var(--brand-secondary);">Ingresos Netos Totales:</strong>
+                <div style="font-family: var(--font-mono); font-size: 0.82rem; margin-top: 4px;">SUM(Fact_Atenciones_Citas[monto_neto])</div>
+              </div>
+              <div style="padding: 12px; background: var(--bg-elevated); border-radius: 6px;">
+                <strong style="font-size: 0.85rem; color: var(--brand-secondary);">Adopción Canales Digitales:</strong>
+                <div style="font-family: var(--font-mono); font-size: 0.82rem; margin-top: 4px;">[Citas por Nova AI + PLEB] / [Total Citas]</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="padding: 14px 18px; background-color: var(--accent-amber-light); border-left: 4px solid var(--accent-amber); border-radius: 4px; font-size: 0.86rem; color: #78350f;">
+            <strong>Nota de Rigor Académico:</strong> Se aclara explícitamente que este modelo dimensional corresponde a un prototipo analítico validado mediante el dataset sintético/de prueba de 3.469 hechos, diseñado específicamente para demostrar la viabilidad analítica y dejar la estructura preparada para su consumo en Power BI sin constituir aún un cuadro de mando productivo conectado a bases de datos en producción real.
+          </div>
+        </div>
+
+        <!-- TAB 3: INVESTIGACIÓN DE OPERACIONES -->
+        <div class="tab-content-panel" id="tab-io">
+          <div style="margin-bottom: 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 6px;">
+              <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--text-primary);">
+                Investigación de Operaciones: Modelo PLEB y Demostración Algorítmica
+              </h3>
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <span class="tag-pill" style="font-weight: 700; color: var(--accent-amber); background: var(--accent-amber-light);">Docente: Ing. Lucía Margarita Mestre Tapia</span>
+                <a href="Entregable_IO_Lucia_Mestre_ClinicaApp.docx" download class="tag-pill" style="font-weight: 700; color: #ffffff; background: var(--accent-amber); text-decoration: none;">📥 Descargar Word IO (.docx)</a>
+              </div>
+            </div>
+            <p style="font-size: 0.95rem; color: var(--text-secondary);">
+              Asignación algorítmica de centros veterinarios mediante Programación Lineal Entera Binaria acoplada a la fórmula trigonométrica del Semiverseno (Haversine).
+            </p>
+          </div>
+
+          <div class="details-2col" style="margin-bottom: 32px;">
+            <div class="math-card">
+              <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--text-primary); margin-bottom: 12px; font-family: var(--font-main);">
+                Formulación Matemática Formal (PLEB)
+              </h4>
+              <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">Función Objetivo:</div>
+              <div class="math-formula-box">Min Z = ∑_{i ∈ I} (d_i × X_i)</div>
+
+              <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 14px; margin-bottom: 8px;">Restricciones del Sistema:</div>
+              <div class="math-variable-list">
+                <div class="math-variable-item">
+                  <span class="math-sym">∑ X_i = 1</span>
+                  <span><strong>Selección Única:</strong> Asignar exactamente 1 sede factible.</span>
+                </div>
+                <div class="math-variable-item">
+                  <span class="math-sym">X_i ≤ A_i</span>
+                  <span><strong>Operatividad:</strong> Solo clínicas con estado APROBADA (A_i = 1).</span>
+                </div>
+                <div class="math-variable-item">
+                  <span class="math-sym">d_i·X_i ≤ D_max</span>
+                  <span><strong>Radio de Cobertura:</strong> Desplazamiento máximo permitido.</span>
+                </div>
+                <div class="math-variable-item">
+                  <span class="math-sym">X_i ∈ {0,1}, d_i ≥ 0</span>
+                  <span>Condiciones de binariedad y no negatividad geodésica.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-block-card">
+              <h4>Fórmula Geodésica de Haversine</h4>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">
+                Calcula la distancia ortodrómica sobre la esfera terrestre entre las coordenadas del usuario <code>(lat_u, lon_u)</code> y cada clínica <code>(lat_i, lon_i)</code>:
+              </p>
+              <div class="code-preview-block" style="margin-bottom: 16px;">
+                d_i = 2 · R · arcsin( √( sin²(Δlat/2) + cos(lat_u) · cos(lat_i) · sin²(Δlon/2) ) )
+                <br><span class="code-comment">// Radio terrestre medio: R = 6.371 km</span>
+              </div>
+              <p style="font-size: 0.84rem; color: var(--text-muted);">
+                Implementado en Java en <code>OptimizacionServiceImpl.java</code> e integrado con mapas interactivos Leaflet en la ruta <code>/usuario/optimizacion-clinicas</code>.
+              </p>
+            </div>
+          </div>
+
+          <!-- Simulador Interactivo de Optimización -->
+          <div style="background-color: var(--bg-elevated); border: 1px solid var(--border-medium); border-radius: var(--radius-lg); padding: 28px;">
+            <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--text-primary); margin-bottom: 10px;">
+              Simulador Didáctico de Optimización PLEB (Cartagena de Indias)
+            </h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 20px;">
+              Ingresa unas coordenadas de prueba en Cartagena para observar cómo el algoritmo evalúa las restricciones y minimiza la distancia.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr) auto; gap: 14px; align-items: flex-end;">
+              <div>
+                <label style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 4px;">Latitud Usuario</label>
+                <input type="number" step="0.0001" id="simUserLat" value="10.4100" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-medium); border-radius: 6px; font-family: var(--font-mono); font-size: 0.88rem;">
+              </div>
+              <div>
+                <label style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 4px;">Longitud Usuario</label>
+                <input type="number" step="0.0001" id="simUserLon" value="-75.5350" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-medium); border-radius: 6px; font-family: var(--font-mono); font-size: 0.88rem;">
+              </div>
+              <div>
+                <label style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 4px;">Radio Máximo D_max (km)</label>
+                <input type="number" step="1" id="simRadioMax" value="15" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-medium); border-radius: 6px; font-family: var(--font-mono); font-size: 0.88rem;">
+              </div>
+              <button class="btn-primary" id="btnRunOptimizationSim" style="padding: 9px 18px;">
+                Ejecutar Modelo PLEB
+              </button>
+            </div>
+
+            <div id="optimizationSimResults">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Arquitectura General -->
+  <section class="section" id="arquitectura">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-tag">Diseño de Software</div>
+        <h2 class="section-heading">Arquitectura de 5 Capas de ClinicaApp</h2>
+        <p class="section-lead">
+          Estructura de integración desacoplada entre backend transaccional, servicios cognitivos de IA generativa y repositorio analítico.
+        </p>
+      </div>
+
+      <div class="diagram-visual-box">
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;">
+          <div class="diagram-interactive-node">
+            <div style="font-size: 0.75rem; font-weight: 700; color: var(--brand-primary); margin-bottom: 4px;">CAPA 1</div>
+            <h4 style="font-size: 0.95rem; font-weight: 800; color: var(--text-primary); margin-bottom: 8px;">Cliente / Frontend</h4>
+            <p style="font-size: 0.78rem; color: var(--text-secondary);">Thymeleaf UI, JavaScript reactivo, Web Speech API (Voz STT/TTS), cliente REST.</p>
+          </div>
+
+          <div class="diagram-interactive-node">
+            <div style="font-size: 0.75rem; font-weight: 700; color: var(--brand-primary); margin-bottom: 4px;">CAPA 2</div>
+            <h4 style="font-size: 0.95rem; font-weight: 800; color: var(--text-primary); margin-bottom: 8px;">Backend Spring Boot</h4>
+            <p style="font-size: 0.78rem; color: var(--text-secondary);">Spring Boot 3.5 (Java 21), SecurityConfig, NovaAIController, IOptimizacionService.</p>
+          </div>
+
+          <div class="diagram-interactive-node">
+            <div style="font-size: 0.75rem; font-weight: 700; color: var(--brand-primary); margin-bottom: 4px;">CAPA 3</div>
+            <h4 style="font-size: 0.95rem; font-weight: 800; color: var(--text-primary); margin-bottom: 8px;">Persistencia NoSQL</h4>
+            <p style="font-size: 0.78rem; color: var(--text-secondary);">MongoDB Atlas 7.0, MongoRepository, Aggregation Framework, 7 colecciones.</p>
+          </div>
+
+          <div class="diagram-interactive-node">
+            <div style="font-size: 0.75rem; font-weight: 700; color: var(--brand-primary); margin-bottom: 4px;">CAPA 4</div>
+            <h4 style="font-size: 0.95rem; font-weight: 800; color: var(--text-primary); margin-bottom: 8px;">Proveedor LLM</h4>
+            <p style="font-size: 0.78rem; color: var(--text-secondary);">Groq Cloud API (Llama 3.3 70B Versatile) + Motor de contingencia MOTOR_LOGICO.</p>
+          </div>
+
+          <div class="diagram-interactive-node">
+            <div style="font-size: 0.75rem; font-weight: 700; color: var(--brand-primary); margin-bottom: 4px;">CAPA 5</div>
+            <h4 style="font-size: 0.95rem; font-weight: 800; color: var(--text-primary); margin-bottom: 8px;">Analítica & BI</h4>
+            <p style="font-size: 0.78rem; color: var(--text-secondary);">6 Datasets CSV (Kimball), Esquema Estrella con 3.469 hechos, métricas DAX.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Evidencias Técnicas -->
+  <section class="section" id="evidencias" style="background-color: var(--bg-elevated);">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-tag">Auditoría & Anexos</div>
+        <h2 class="section-heading">Galería de Evidencias Técnicas</h2>
+        <p class="section-lead">
+          Explora los diagramas oficiales, esquemas de datos, modelos matemáticos y datasets auditados del segundo seguimiento.
+        </p>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar-container">
+        <button class="filter-btn active" data-filter="todas">Todas las Evidencias</button>
+        <button class="filter-btn" data-filter="dwa">Desarrollo Web Avanzado</button>
+        <button class="filter-btn" data-filter="vd">Visualización de Datos II</button>
+        <button class="filter-btn" data-filter="io">Investigación de Operaciones</button>
+      </div>
+
+      <!-- Evidence Grid -->
+      <div class="evidence-grid" id="evidenceGridContainer">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Informe Metodológico PDF & Documentos Word -->
+  <section class="section" id="documentacion">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-tag">Documentación Oficial</div>
+        <h2 class="section-heading">Informes y Entregables por Asignatura</h2>
+        <p class="section-lead">
+          Descarga los informes individuales en formato Microsoft Word (.docx) por materia y visualiza el Informe Metodológico PDF completo.
+        </p>
+      </div>
+
+      <!-- 3 Word Documents Cards -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px;">
+        <div style="background: var(--bg-surface); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow-sm);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span class="tag-pill" style="font-weight: 700; color: var(--brand-primary); background: var(--brand-primary-light);">DOCX • DWA</span>
+              <span style="font-size: 0.75rem; color: var(--text-muted);">Entregable Individual</span>
+            </div>
+            <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin-bottom: 6px;">Entregable DWA (Word)</h4>
+            <p style="font-size: 0.82rem; color: var(--brand-primary); font-weight: 600; margin-bottom: 8px;">Docente: Ing. Fabio García Ramírez</p>
+            <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 18px;">
+              Informe Word con arquitectura de 5 capas Spring Boot, clases del agente Nova Brain, seguridad perimetral, RBAC y diccionario MongoDB.
+            </p>
+          </div>
+          <a href="Entregable_DWA_Fabio_Garcia_ClinicaApp.docx" download class="btn-primary" style="font-size: 0.85rem; padding: 10px 16px; justify-content: center;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Descargar Word DWA
+          </a>
+        </div>
+
+        <div style="background: var(--bg-surface); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow-sm);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span class="tag-pill" style="font-weight: 700; color: var(--brand-secondary); background: var(--brand-secondary-light);">DOCX • VD II</span>
+              <span style="font-size: 0.75rem; color: var(--text-muted);">Entregable Individual</span>
+            </div>
+            <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin-bottom: 6px;">Entregable VD II (Word)</h4>
+            <p style="font-size: 0.82rem; color: var(--brand-secondary); font-weight: 600; margin-bottom: 8px;">Docente: Ing. Walter Alberto Espriella Castellar</p>
+            <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 18px;">
+              Informe Word con clasificación de fuentes (MongoDB vs CSV), diseño del esquema estrella Kimball, tabla Fact_Atenciones y fórmulas DAX.
+            </p>
+          </div>
+          <a href="Entregable_VD_Walter_Espriella_ClinicaApp.docx" download class="btn-primary" style="background-color: var(--brand-secondary); font-size: 0.85rem; padding: 10px 16px; justify-content: center;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Descargar Word VD II
+          </a>
+        </div>
+
+        <div style="background: var(--bg-surface); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow-sm);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span class="tag-pill" style="font-weight: 700; color: var(--accent-amber); background: var(--accent-amber-light);">DOCX • IO</span>
+              <span style="font-size: 0.75rem; color: var(--text-muted);">Entregable Individual</span>
+            </div>
+            <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin-bottom: 6px;">Entregable IO (Word)</h4>
+            <p style="font-size: 0.82rem; color: var(--accent-amber); font-weight: 600; margin-bottom: 8px;">Docente: Ing. Lucía Margarita Mestre Tapia</p>
+            <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 18px;">
+              Informe Word con planteamiento del problema real, modelo PLEB completo con restricciones, ecuación Haversine e implementación Java.
+            </p>
+          </div>
+          <a href="Entregable_IO_Lucia_Mestre_ClinicaApp.docx" download class="btn-primary" style="background-color: var(--accent-amber); font-size: 0.85rem; padding: 10px 16px; justify-content: center;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Descargar Word IO
+          </a>
+        </div>
+      </div>
+
+      <!-- Visor de PDF Integrado -->
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-medium); border-radius: var(--radius-xl); padding: 32px; box-shadow: var(--shadow-md);">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border-light);">
+          <div>
+            <span class="tag-pill" style="font-weight: 700; color: var(--brand-primary); background-color: var(--brand-primary-light);">SEGUNDO SEGUIMIENTO • VII SEMESTRE</span>
+            <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary); margin-top: 6px;">
+              ClinicaApp_Inf_Metodologico_7mo_FINAL_Oficial.pdf
+            </h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Documento integral con Portada, Marcos de Referencia, Metodología, Resultados y Anexos Técnicos A-E.
+            </p>
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <a href="ClinicaApp_Inf_Metodologico_7mo_FINAL_Oficial.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              Abrir en Pestaña Nueva
+            </a>
+            <a href="ClinicaApp_Inf_Metodologico_7mo_FINAL_Oficial.pdf" download class="btn-secondary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Descargar PDF Oficial
+            </a>
+          </div>
+        </div>
+
+        <!-- Visor Integrado de PDF -->
+        <div style="width: 100%; height: 600px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-light); background: #f1f5f9;">
+          <iframe src="ClinicaApp_Inf_Metodologico_7mo_FINAL_Oficial.pdf" style="width: 100%; height: 100%; border: none;" title="Visor del Informe Metodológico PDF Oficial"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Matriz de Trazabilidad -->
+  <section class="section" id="trazabilidad">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-tag">Control de Calidad</div>
+        <h2 class="section-heading">Matriz de Trazabilidad y Cumplimiento</h2>
+        <p class="section-lead">
+          Estado real y porcentajes auditados al cierre del VII semestre según el ciclo de vida del software.
+        </p>
+      </div>
+
+      <div class="academic-table-wrap">
+        <table class="academic-table">
+          <thead>
+            <tr>
+              <th>Fase / Objetivo</th>
+              <th>Descripción y Evidencia Auditada</th>
+              <th style="text-align: center;">Avance Real</th>
+              <th style="text-align: center;">Estado Actual</th>
+              <th>Actividades Pendientes (VIII Semestre)</th>
+            </tr>
+          </thead>
+          <tbody id="traceabilityTableBody">
+            <!-- Rendered by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Cronograma & Línea de Tiempo -->
+  <section class="section" id="cronograma">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-tag">Planificación Temporal</div>
+        <h2 class="section-heading">Cronograma: VI, VII y Proyección a VIII Semestre</h2>
+        <p class="section-lead">
+          Diferenciación rigurosa entre las actividades ejecutadas (100%) y las fases planeadas para el octavo semestre.
+        </p>
+      </div>
+
+      <div class="timeline-track" id="timelineTrackContainer">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Equipo de Desarrollo & Docentes -->
+  <section class="section" id="equipo" style="background-color: var(--bg-elevated);">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-tag">Investigadores & Docentes</div>
+        <h2 class="section-heading">Equipo de Desarrollo y Docentes Evaluadores</h2>
+        <p class="section-lead">
+          Estudiantes investigadores y profesores de la Fundación Universitaria Tecnológico Comfenalco.
+        </p>
+      </div>
+
+      <div class="team-grid" id="teamGridContainer">
+        <!-- Rendered by JS -->
+      </div>
+
+      <div class="committee-box">
+        <div class="committee-title">Docentes Evaluadores del Proyecto de Aula Interdisciplinar</div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 16px;" id="committeeListContainer">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <h3>CLINICAAPP</h3>
+          <p>
+            Proyecto de aula interdisciplinar formulado en el programa de Ingeniería de Sistemas de la Fundación Universitaria Tecnológico Comfenalco. Integración de Desarrollo Web Avanzado, Visualización de Datos II e Investigación de Operaciones.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegación Rápida</h4>
+          <ul class="footer-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#proyecto">Sobre el Proyecto</a></li>
+            <li><a href="#problema">Árbol del Problema</a></li>
+            <li><a href="#asignaturas">Entregables Asignaturas</a></li>
+            <li><a href="#documentacion">Informes Word & PDF</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Repositorio Oficial</h4>
+          <ul class="footer-links">
+            <li><a href="https://github.com/cardenaswalker2/ClinicaApp.git" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+            <li><a href="#trazabilidad">Matriz de Cumplimiento</a></li>
+            <li><a href="#cronograma">Proyección a VIII Semestre</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Fundación Universitaria Tecnológico Comfenalco — Facultad de Ingeniería. Todos los derechos reservados.</div>
+        <div>Cartagena de Indias D. T. y C., Colombia</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal: Visor de Evidencias -->
+  <div class="modal-backdrop" id="evidenceModalBackdrop" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modalEvidenceTitle">Detalle de Evidencia</h3>
+        <button class="btn-close-modal" id="btnCloseEvidenceModal" aria-label="Cerrar modal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="modal-body" id="modalEvidenceContent">
+        <!-- Dynamic content -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Buscador Global (Command Palette) -->
+  <div class="modal-backdrop" id="searchModalBackdrop" role="dialog" aria-modal="true">
+    <div class="modal-card search-modal-card">
+      <div class="search-input-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-muted); margin-right: 12px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="searchGlobalInput" class="search-input-field" placeholder="Escribe para buscar (ej. PLEB, Nova Brain, Power BI, MongoDB)..." autocomplete="off">
+        <button class="btn-close-modal" id="btnCloseSearchModal" aria-label="Cerrar búsqueda">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="search-results-list" id="searchResultsContainer">
+        <!-- Dynamic search results -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+/* ==========================================================================
+   ClinicaApp - Responsive Design & Mobile Adaptations (Ultra-Polished)
+   Breakpoints: 1200px, 1024px, 768px, 640px, 480px, 360px
+   ========================================================================== */
+
+/* Laptop & Small Desktops (<= 1200px) */
+@media (max-width: 1200px) {
+  .hero-main {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 32px;
+  }
+
+  .subjects-overview-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Tablets Landscape & Medium Screens (<= 1024px) */
+@media (max-width: 1024px) {
+  .hero-main {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .hero-headline {
+    font-size: 2.35rem;
+  }
+
+  .subjects-overview-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .problem-interactive-tree {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .metrics-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .details-2col,
+  .details-3col {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .diagram-visual-box > div {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  #documentacion > .container > div > div:first-child {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Tablets Portrait & Large Phones (<= 768px) */
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 64px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .section-heading {
+    font-size: 1.75rem;
+  }
+
+  .section-lead {
+    font-size: 0.98rem;
+  }
+
+  .hero-academic-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+  }
+
+  .academic-entity {
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+
+  .hero-headline {
+    font-size: 1.95rem;
+    line-height: 1.2;
+  }
+
+  .hero-description {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  /* Mobile Navigation Drawer */
+  .nav-menu {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    height: calc(100vh - var(--nav-height));
+    background-color: #ffffff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 10px;
+    border-bottom: 1px solid var(--border-light);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 999;
+    overflow-y: auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+  }
+
+  .btn-mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-subtle);
+  }
+
+  .btn-presentation span,
+  .btn-icon-search span:first-of-type,
+  .kbd-shortcut {
+    display: none;
+  }
+
+  .btn-presentation {
+    padding: 8px 10px;
+  }
+
+  .btn-icon-search {
+    padding: 8px 10px;
+  }
+
+  .evidence-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 18px;
+  }
+
+  .subject-tabs-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 6px 8px 0;
+  }
+
+  .tab-btn {
+    padding: 10px 14px;
+    font-size: 0.85rem;
+  }
+
+  .tab-content-panel {
+    padding: 20px 16px;
+  }
+
+  /* Simulador de optimización en móvil */
+  #tab-io .details-2col + div > div:nth-child(3) {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+
+  /* Diagrama de 5 capas */
+  .diagram-visual-box > div {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Comité docente */
+  .committee-box > div:last-child {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Modal responsive */
+  .modal-card {
+    max-height: 92vh;
+    border-radius: var(--radius-lg);
+  }
+
+  .modal-header {
+    padding: 14px 18px;
+  }
+
+  .modal-body {
+    padding: 16px;
+  }
+}
+
+/* Small SmartPhones (<= 480px) */
+@media (max-width: 480px) {
+  .logo-title {
+    font-size: 1rem;
+  }
+
+  .logo-subtitle {
+    font-size: 0.65rem;
+  }
+
+  .hero-headline {
+    font-size: 1.65rem;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metrics-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-track::before {
+    left: 14px;
+  }
+
+  .timeline-dot {
+    left: 5px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .timeline-item {
+    padding-left: 36px;
+    margin-bottom: 24px;
+  }
+
+  .timeline-phase {
+    font-size: 0.92rem;
+  }
+
+  .academic-table th,
+  .academic-table td {
+    padding: 10px 12px;
+    font-size: 0.78rem;
+  }
+
+  /* Visor PDF en teléfonos */
+  #documentacion iframe {
+    height: 420px !important;
+  }
+}
+
+/* Extra Small Devices (<= 360px) */
+@media (max-width: 360px) {
+  .hero-headline {
+    font-size: 1.45rem;
+  }
+
+  .tab-btn {
+    font-size: 0.75rem;
+    padding: 8px 10px;
+  }
+}
