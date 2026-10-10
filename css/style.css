@@ -1565,3 +1565,137 @@ img {
   box-shadow: var(--shadow-md);
   border-color: var(--border-medium);
 }
+
+/* ==========================================================================
+   Google Drive Repository Callout & Floating Widget
+   ========================================================================== */
+.drive-banner-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #eff6ff 100%);
+  border: 1.5px solid #86efac;
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.08);
+}
+
+.drive-banner-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.drive-icon-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.drive-btn-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #0f766e;
+  color: #ffffff !important;
+  padding: 11px 20px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.25);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.drive-btn-main:hover {
+  background: #115e59;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 118, 110, 0.35);
+}
+
+/* Floating Google Drive Widget */
+.floating-drive-widget {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  animation: floatBounce 4s ease-in-out infinite;
+}
+
+.floating-drive-tooltip {
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.floating-drive-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: 46px;
+  right: 22px;
+}
+
+.floating-drive-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  color: #0f172a;
+  padding: 10px 16px 10px 12px;
+  border-radius: 9999px;
+  border: 1.5px solid #22c55e;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(34, 197, 94, 0.2);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.floating-drive-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22), 0 4px 12px rgba(34, 197, 94, 0.35);
+  background: #f0fdf4;
+  border-color: #16a34a;
+}
+
+.floating-drive-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+@keyframes floatBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}

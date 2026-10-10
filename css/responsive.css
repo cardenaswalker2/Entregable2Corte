@@ -381,3 +381,37 @@ html, body {
     padding: 6px 8px;
   }
 }
+
+/* Responsive Google Drive & Floating Button */
+@media (max-width: 768px) {
+  .drive-banner-box {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .drive-btn-main {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .floating-drive-widget {
+    bottom: 18px;
+    right: 16px;
+  }
+
+  .floating-drive-btn span.floating-btn-text {
+    display: none;
+  }
+
+  .floating-drive-btn {
+    padding: 10px;
+    border-radius: 50%;
+  }
+
+  .floating-drive-tooltip {
+    font-size: 0.68rem;
+    padding: 4px 10px;
+  }
+}
