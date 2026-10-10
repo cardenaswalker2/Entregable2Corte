@@ -674,9 +674,9 @@
       </div>
 
       <!-- 3 Individual PDF Cards -->
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px;">
+      <div class="pdf-grid-cards" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px;">
         <!-- DWA PDF Card -->
-        <div style="background: var(--bg-surface); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow-sm); transition: all 0.2s ease;">
+        <div class="pdf-item-card" style="background: var(--bg-surface); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow-sm); transition: all 0.2s ease;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
               <span class="tag-pill" style="font-weight: 700; color: var(--brand-primary); background: var(--brand-primary-light);">PDF • DWA</span>
@@ -700,7 +700,7 @@
         </div>
 
         <!-- VD II PDF Card -->
-        <div style="background: var(--bg-surface); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow-sm); transition: all 0.2s ease;">
+        <div class="pdf-item-card" style="background: var(--bg-surface); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow-sm); transition: all 0.2s ease;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
               <span class="tag-pill" style="font-weight: 700; color: var(--brand-secondary); background: var(--brand-secondary-light);">PDF • VD II</span>
@@ -724,7 +724,7 @@
         </div>
 
         <!-- IO PDF Card -->
-        <div style="background: var(--bg-surface); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow-sm); transition: all 0.2s ease;">
+        <div class="pdf-item-card" style="background: var(--bg-surface); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow-sm); transition: all 0.2s ease;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
               <span class="tag-pill" style="font-weight: 700; color: var(--accent-amber); background: var(--accent-amber-light);">PDF • IO</span>
@@ -749,8 +749,8 @@
       </div>
 
       <!-- Visor de PDF Integrado (Informe Metodológico Completo) -->
-      <div style="background: var(--bg-surface); border: 1px solid var(--border-medium); border-radius: var(--radius-xl); padding: 32px; box-shadow: var(--shadow-md);">
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border-light);">
+      <div class="pdf-viewer-container" style="background: var(--bg-surface); border: 1px solid var(--border-medium); border-radius: var(--radius-xl); padding: 32px; box-shadow: var(--shadow-md);">
+        <div class="pdf-viewer-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border-light);">
           <div>
             <span class="tag-pill" style="font-weight: 700; color: var(--brand-primary); background-color: var(--brand-primary-light);">SEGUNDO SEGUIMIENTO • VII SEMESTRE</span>
             <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary); margin-top: 6px;">
@@ -760,7 +760,7 @@
               Documento integral con Portada, Marcos de Referencia, Metodología, Resultados y Anexos Técnicos A-E.
             </p>
           </div>
-          <div style="display: flex; gap: 10px;">
+          <div class="pdf-viewer-actions" style="display: flex; gap: 10px;">
             <a href="ClinicaApp_Inf_Metodologico_7mo_FINAL_Oficial.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
               Abrir en Pestaña Nueva
@@ -773,8 +773,8 @@
         </div>
 
         <!-- Visor Integrado de PDF -->
-        <div style="width: 100%; height: 600px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-light); background: #f1f5f9;">
-          <iframe src="ClinicaApp_Inf_Metodologico_7mo_FINAL_Oficial.pdf" style="width: 100%; height: 100%; border: none;" title="Visor del Informe Metodológico PDF Oficial"></iframe>
+        <div style="width: 100%; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-light); background: #f1f5f9;">
+          <iframe class="pdf-viewer-iframe" src="ClinicaApp_Inf_Metodologico_7mo_FINAL_Oficial.pdf" style="width: 100%; height: 600px; border: none;" title="Visor del Informe Metodológico PDF Oficial"></iframe>
         </div>
       </div>
     </div>
