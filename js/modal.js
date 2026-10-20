@@ -89,11 +89,15 @@ function openEvidenceModal(evidenceId) {
           </tbody>
         </table>
       </div>
+      <div style="margin-top: 20px; text-align: center;">
+        <h5 style="font-size: 0.88rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">Diagrama Visual del Modelo E-R Operacional</h5>
+        <img src="docs_diagrama_er_oltp.png" alt="Diagrama E-R MongoDB OLTP" style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-medium); box-shadow: var(--shadow-sm);">
+      </div>
     `;
   } else if (ev.id === 'ev4') {
     // Modelo Dimensional Esquema Estrella
     bodyHtml += `
-      <div style="background: #ffffff; border: 1px solid var(--border-medium); border-radius: var(--radius-md); padding: 20px;">
+      <div style="background: #ffffff; border: 1px solid var(--border-medium); border-radius: var(--radius-md); padding: 20px; margin-bottom: 16px;">
         <h4 style="font-size: 0.95rem; margin-bottom: 14px; text-align: center; color: var(--brand-secondary);">Esquema Estrella: Fact_Atenciones_Citas & 5 Dimensiones</h4>
         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 16px;">
           <div style="padding: 10px; background: var(--bg-elevated); border: 1px solid var(--border-light); border-radius: 6px;">
@@ -117,6 +121,10 @@ function openEvidenceModal(evidenceId) {
           <strong style="color: var(--brand-secondary); font-size: 0.95rem;">TABLA DE HECHOS CENTRAL: Fact_Atenciones_Citas</strong>
           <p style="font-size: 0.82rem; color: #3730a3; margin-top: 4px;">Grano atómico: Cita individual atendida (3.469 hechos simulados) • Relaciones 1:N unidireccionales desde todas las dimensiones.</p>
         </div>
+      </div>
+      <div style="text-align: center;">
+        <h5 style="font-size: 0.88rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">Diagrama Visual del Esquema Estrella (Star Schema)</h5>
+        <img src="docs_diagrama_estrella_kimball.png" alt="Esquema Estrella Kimball Power BI" style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-medium); box-shadow: var(--shadow-sm);">
       </div>
     `;
   } else if (ev.id === 'ev5') {
